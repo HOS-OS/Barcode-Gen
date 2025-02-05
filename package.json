@@ -1,0 +1,46 @@
+{
+  "name": "barcodegen",
+  "version": "2.0.1",
+  "description": "A simple barcode generator app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac --win --x64 --arm64"
+  },
+  "keywords": ["barcode", "generator"],
+  "author": "Hunter M Null",
+  "license": "MIT",
+
+  "dependencies": {
+    "@electron/remote": "^2.1.2"
+  },
+
+  "devDependencies": {
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3"
+
+  },
+  "build": {
+    "appId": "com.HuntComputer.barcodegen",
+    "mac": {
+      "icon": "appicons/icon.icns",
+      "target": ["dmg", "zip"]
+    },
+    "win": {
+      "icon": "appicons/icon.ico",
+      "target": "nsis"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "style.css",
+      "code.js",
+      "barcode.js",
+      "resources/**/*",
+      "appicons/**/*"
+    ],
+    "directories": {
+      "buildResources": "appicons"
+    }
+  }
+}

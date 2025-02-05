@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="historyMenuToggle" onclick="toggleHistoryMenu()">🔍 History</button>
+    
+    <div id="historyMenu" class="history-menu">
+        <div class="history-menu-header">
+            <input type="text" id="historySearchInput" placeholder="Search barcodes...">
+            <span class="close-history" onclick="toggleHistoryMenu()">&times;</span>
+        </div>
+        <div id="historyMenuContent" class="history-menu-content"></div>
+        </div>
+
+    <h1>Barcode Generator</h1>
+    <input type="text" id="input" placeholder="Enter 11-digit number" maxlength="11">
+    <input type="text" id="barcodeName" placeholder="Enter barcode name (optional)">
+    <button onclick="generateBarcode()">Generate Barcode</button>
+    <!-- Barcode Display Area -->
+    <svg id="barcode"></svg>
+    
+    <canvas id="barcodeCanvas" style="display:none;"></canvas>
+
+    <a id="downloadLink" href="#" style="display:none;" download="barcode.png">Download Barcode as PNG</a>
+
+    <button id="aboutBtn">About</button>
+
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Barcode Generator</h2>
+            <p>Version: 2.0.1</p>
+            <p>Developed by Hunter M Null.</p>
+            <a href="https://hos-os.github.io/HuntComputerSoftware.github.io/" id="external-link"><nobr>See My Other Apps ¯\_(ツ)_/¯</nobr></a>
+            <p>Hunt Computer IT Consulting & Web Services</p>
+            <button id="exportBtn">Export History to CSV</button> <br> <button id="clearHistoryBtn">Clear History</button>
+
+        </div>
+    </div>
+
+    <script src="barcode.js"></script>
+    <script src="code.js"></script>
+</body>
+</html>
